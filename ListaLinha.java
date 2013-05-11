@@ -18,5 +18,14 @@ class ListaLinha{
 		fim = fim.proximo();
 		return;
 	}
+	
+	void imprimeLista(){
+		LinhaDeArquivo aux = inicio;
+			do{
+				System.out.println("Arquivo: "+aux.nomeArq+ 
+								 "\nFrase :"+aux.conteudo);
+				aux=aux.prox;
+			}while(aux!=fim);
+	}
 
 }
