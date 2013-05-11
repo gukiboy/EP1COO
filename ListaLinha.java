@@ -14,6 +14,7 @@ class ListaLinha{
 			return;
 		}
 		LinhaDeArquivo aux = new LinhaDeArquivo(num,cont,nomeArq,palavra);
+		aux.prox = null;
 		fim.prox = aux;
 		fim = fim.proximo();
 		return;
@@ -25,7 +26,7 @@ class ListaLinha{
 				System.out.println("Arquivo: "+aux.nomeArq+ 
 								 "\nFrase :"+aux.conteudo);
 				aux=aux.prox;
-			}while(aux!=fim);
+			}while(aux!=null);
 	}
 
 }

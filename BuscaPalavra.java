@@ -30,7 +30,7 @@ class BuscaPalavra{
 	
 	public int numeroDeOcorrencias(String palavra){//Busca sequencial.
 		int num = 0;
-		int numLast = 0;
+		int numLast = 0;// sera usado para comparar com o numero atual de instancias da palavra
 		int numLinha = 1;
 		String frase = ""; //Salva cada linha
 		try{
@@ -43,7 +43,7 @@ class BuscaPalavra{
 						num++;
 					}
 				}
-					if(num>numLast){
+					if(num>numLast){// Se foi encontrada uma palavra na linha atual, essa linha eh adicionada a lista ligada
 						linhas.adicionaLinha(numLinha,frase,arquivo.getName(),palavra);
 						numLast=num;
 					}
