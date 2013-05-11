@@ -7,14 +7,14 @@ class ListaLinha{
 		fim = null;
 	}
 
-	void adicionaLinha(int num, String cont, String nomeArq){
+	void adicionaLinha(int num, String cont, String nomeArq,String palavra){
 		if(inicio == null){//Lista vazia
-			inicio = new LinhaDeArquivo(num,cont,nomeArq);
+			inicio = new LinhaDeArquivo(num,cont,nomeArq, palavra);
 			fim = inicio;
 			return;
 		}
-	
-		fim.proximo() = new LinhaDeArquivo(num,cont);
+		LinhaDeArquivo aux = new LinhaDeArquivo(num,cont,nomeArq,palavra);
+		fim.prox = aux;
 		fim = fim.proximo();
 		return;
 	}
