@@ -30,20 +30,26 @@ class BuscaPalavra{
 	
 	public int numeroDeOcorrencias(String palavra){//Busca sequencial.
 		int num = 0;
+		int numLast = 0;
 		int numLinha = 1;
 		String frase = ""; //Salva cada linha
 		try{
 			reader = new Scanner(arquivo); //Reader reiniciado a cada palavra buscada
-		
-			while(reader.hasNext()){
+			do{
 				frase = reader.nextLine();
 				Scanner ler = new Scanner(frase);// lera a frase por tokens
-				if(palavra.equals(ler.next())){ //se ha uma palavra, o contador recebe +1
-					num++;
+				while(ler.hasNext()){	
+					if(palavra.equals(ler.next())){ //se ha uma palavra, o contador recebe +1
+						num++;
+					}
 				}
-				linhas.adicionaLinha(numLinha,palavra,arquivo.getName(),palavra);
+					if(num>numLast){
+						linhas.adicionaLinha(numLinha,frase,arquivo.getName(),palavra);
+						numLast=num;
+					}
 				numLinha++;
-			}
+				ler.close();
+			}while(reader.hasNextLine());
 		}catch(IOException e){
 			e.printStackTrace();
 		}
