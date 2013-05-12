@@ -20,7 +20,7 @@ class ListaLinha{
 		return;
 	}
 	
-	void imprimeLista(){
+	void imprimeLista(){ //Imprime a lista, com as frases e arquivos aonde estão as palavras
 		LinhaDeArquivo aux = inicio;
 			do{
 				System.out.println("Arquivo: "+aux.nomeArq+ 
