@@ -1,6 +1,8 @@
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +28,29 @@ class BuscaPalavra{
 			System.out.println("Arquivo não existe!");
 		}
 	}
+	
+	public void mudaArquivo(File newArq){// Muda o arquivo que esta sendo utilizado para leitura
+		try{
+			arquivo = newArq;
+			reader = new Scanner(arquivo);
+		}catch(IOException e){
+			System.out.println("Erro ao abrir o arquivo!");
+		}
+	}
+	
+		public void serializaMap(HashMap e, String arquivo){//Salva o mapa num arquivo.
+            try
+            {
+                FileOutputStream fileOut = new FileOutputStream(arquivo);
+                ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                out.writeObject(e);
+                out.close();
+                fileOut.close();
+            }catch(IOException i)
+            {
+                System.out.println("Não foi possivel serializar o objeto!");
+            }
+        }
 	
 	
 	public int numeroDeOcorrencias(String palavra){//Busca sequencial.
