@@ -8,7 +8,20 @@ class IndiceDePalavras{
     }
 
     void imprime(){//Imprime o conteudo da lista
-
+/*    6776873 ega@l&*/
+	if(estaVazia()){
+		System.out.println("Lista está vazia");
+		return;
+	}
+	Palavra aux = inicio;
+	while(aux.temProximo()){
+		System.out.println("Arquivo:"+aux.getArquivo());
+		System.out.println("Palavra:"+aux.getPalavra());
+		System.out.println("Linha(conteúdo):"aux.getFrase());
+		System.out.println("Linha(número):"aux.getNumero());
+		System.out.println("______________________________");
+	}
+	    return;
     }
 
     void insereElemento(Palavra elem){//Insere elemento no final da lista
@@ -20,4 +33,3 @@ class IndiceDePalavras{
     }
 
 }
-________________
