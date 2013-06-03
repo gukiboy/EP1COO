@@ -25,11 +25,15 @@ class IndiceDePalavras{
     }
 
     void insereElemento(Palavra elem){//Insere elemento no final da lista
-
+		if(estaVazia())
     }
 
-    boolean estaVazia(){/*Retorna 'true' se a lista estiver vazia
-                  e 'false' se possuir pelo menos um elemento*/
+    boolean estaVazia(){/*Retorna 'true' se a lista estiver vazia e 'false' se possuir pelo menos um elemento*/
+		if(this.inicio==null){
+			return true;
+		}
+		
+		return false;
     }
 
 }
